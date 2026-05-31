@@ -1,0 +1,55 @@
+.SettingsBar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--PanelGap);
+
+	justify-content: flex-end;
+
+	padding: var(--PanelPadding);
+	border: 1px solid var(--Border);
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--BG-3);
+
+	max-width: min(5vw, 60px);
+	min-width: 50px;
+}
+
+.SettingsButton,
+.AccountButton {
+	width: 100%;
+	max-width: 5vw;
+	min-width: 50px;
+	aspect-ratio: 1 / 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--BG-2);
+
+	transition: background-color 0.2s;
+}
+
+.SettingsButton {
+	border: 1px solid color-mix(in hsl, var(--Blue-3), transparent 70%);
+}
+
+.AccountButton {
+	border: 1px solid color-mix(in hsl, var(--Purple-3), transparent 70%);
+}
+
+.SettingsButton:hover,
+.AccountButton:hover {
+	background-color: var(--BG-1);
+}
+
+.SettingsBar img {
+	width: 100%;
+	height: 100%;
+
+	object-fit: contain;
+	
+	border-radius: var(--PanelBorderRadius);
+}

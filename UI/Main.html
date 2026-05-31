@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Slate-Link Messaging Service</title>
+
+	<script src="JS/TextArea.js" defer></script>
+	<script src="JS/SendMessage.js" defer></script>
+
+	<script src="JS/SwitchConversation.js" defer></script>
+	<script src="JS/NewConversation.js" defer></script>
+	
+	<script src="JS/UpdateConversationList.js" defer></script>
+	<script src="JS/UpdateMessageList.js" defer></script>
+	<script src="JS/UpdateUserInfo.js" defer></script>
+
+	<script src="JS/SettingsMenu.js" defer></script>
+	<script src="JS/AccountMenu.js" defer></script>
+	<script src="JS/Login.js" defer></script>
+
+	<script src="JS/CreatePopup.js" defer></script>
+	
+	
+
+	<link rel="stylesheet" href="CSS/Common.css">
+	<link rel="stylesheet" href="CSS/WindowLayout.css">
+	
+	<link rel="stylesheet" href="CSS/MainContent.css">
+	<link rel="stylesheet" href="CSS/MessageStyling.css">
+
+	<link rel="stylesheet" href="CSS/Sidebar.css">
+
+	<link rel="stylesheet" href="CSS/SettingsBar.css">
+	<link rel="stylesheet" href="CSS/SettingsMenu.css">
+	<link rel="stylesheet" href="CSS/AccountMenu.css">
+	<link rel="stylesheet" href="CSS/Login.css">
+
+	<link rel="stylesheet" href="CSS/Popup.css">
+</head>
+
+
+
+
+<body>
+
+	<div class="Window">
+
+		<div class="SettingsBar">
+			<div id="OpenSettings" class="SettingsButton"><img src="Images/SettingsIcon.png" alt="Settings"></div>
+			<div id="OpenAccount" class="AccountButton"><img src="Images/AccountIcon.png" alt="Account"></div>
+		</div>
+
+	<div class="Sidebar">
+
+		<div class="ConversationList">
+			<!-- Conversation items will be added here by JavaScript -->
+		</div>
+
+		<div class="StartConversation">
+			<input type="text" placeholder="Start or find a conversation" id="StartConversationInput">
+			<button type="submit" id="StartConversationButton">></button>
+		</div>
+
+		<div class="UserInfo">
+			<div id="ClientUsername">Username</div>
+			<div id="ClientToken">Client Token</div>
+		</div>
+	</div>
+
+	<div class="MainContent">
+		<div class="ConversationHeader">
+			<div id="ConversationTitle">Conversation Title</div>
+			<div id="LastMessageTime">Last Message Time</div>
+		</div>
+
+		<div class="MessageArea">
+			<!-- Messages will be added here by JavaScript -->
+		</div>
+
+		<div class="InputArea">
+			<textarea id="MessageInput" maxlength="1000" placeholder="Select or start a conversation to start messaging!"></textarea>
+			<button id="SendButton">></button>
+			<div id="CharacterCount">0/1000</div>
+		</div>
+	</div>
+
+	</div>
+
+	<div id="SettingsOverlay">
+		<div class="SettingsWindow">
+			<div class="OverlayTitle">Settings</div>
+			<br><br>
+			<button id="ExitSettings">Exit</button>
+		</div>
+	</div>
+
+	<div id="AccountOverlay">
+		<div class="AccountWindow">
+			<div class="OverlayTitle">Account</div>
+			<br>
+			<div class="AccountWindowText">
+				If you press the button below, your saved login information will be reset, and the authentication token will be deleted, meaning you have to sign in again. Locally cached conversations will also be deleted, you can retrieve them from the server on the next sign in, and the unread messages feature will reset counting all messages as unread.
+			</div>
+			<br>
+			<button class="AccountWindowButton" id="LogoutButton">Sign out</button>
+			<br><br>
+			<div class="AccountWindowText">
+				This button will does the same as the Sign out button, logging you out of your account, deleting the saved login information, authentication token, and locally cached conversation. Serverside, it will also reset your password to the default. The next time you sign in, your password will be updated to the one you have entered.<br>
+				<strong>WARNING:</strong> Anyone will be able to log in to your account if you haven't set a password yet and steal it from you. Be very fast.<br>
+				<strong>WARNING:</strong> You will not be asked for confirmation<br>
+				NOT CURRENTLY FUNCTIONAL, JUST ASK ADMIN TO RESET PASSWORD
+			</div>
+			<br>
+			<button class="AccountWindowButton" id="ResetPasswordButton">Reset password</button>
+			<br><br>
+			<button id="ExitAccount">Exit</button>
+		</div>
+	</div>
+
+	<div id="LoginScreen">
+		<div class="LoginWindow">
+			<div class="OverlayTitle">Sign in</div>
+			<br>
+			<div id="LoginWindowText">
+				Enter your username and password to log in to your Slatelink account.<br>
+				If your account has been newly set up by THE server administrator and creator (account username: Lucian), the password you input will be your new account password; make sure to enter it accurately as only I can reset it.<br>
+				If you wish to reset your password, speak to me but first make sure you are logged out of your account.
+			</div>
+			<br>
+			<input type="text" placeholder="Enter your username" class="LoginInfoInput" id="UsernameInput">
+			<input type="password" placeholder="Enter your password" class="LoginInfoInput" id="PasswordInput">
+			<div id="LoginCheckboxRow">
+				<input type="checkbox" id="SaveLoginInformation" value="Save" checked>
+				<label for="SaveLoginInformation">Save login information? (Recommended)</label>
+			</div>
+
+			<br><br>
+			<button id="LoginButton">Sign in</button>
+		</div>
+	</div>
+
+	<div id="PopupContainer">
+
+	</div>
+
+</body>
+</html>
+
+<script>
+	window.UI_READY = true;
+</script>

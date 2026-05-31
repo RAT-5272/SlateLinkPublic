@@ -1,0 +1,18 @@
+.Window,
+.Window .MainContent,
+.Window .Sidebar {
+	min-height: 0;
+}
+
+.Window {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+
+	gap: var(--PanelGap);
+	padding: var(--PanelGap);
+
+	height: 100vh;
+	overflow: hidden;
+
+	border-color: var(--Border);
+}

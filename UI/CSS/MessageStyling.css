@@ -1,0 +1,111 @@
+.Message {
+	position: relative;
+
+	display: grid;
+	grid-template-columns: 1fr;
+
+	padding: 5px;
+	margin-bottom: var(--MessageSpacing);
+	padding-left: 2rem;
+	gap: 2px;
+
+	border-radius: var(--PanelBorderRadius);
+
+	background: transparent;
+}
+
+.Message * {
+	user-select: text;
+}
+
+.Message.Mention {
+	position: relative;
+	border-radius: var(--PanelBorderRadius);
+	background: var(--Mention);
+}
+.Message.Mention::before {
+	content: "";
+	position: absolute;
+
+	left: 6px;
+	top: calc(10% + 6px);
+	height: calc(80% - 12px);
+	width: 5px;
+
+	background: var(--Accent-2);
+	border-radius: 999px;
+
+}
+
+.Message:hover {
+	background: var(--MessageHover);
+}
+
+.Message.Mention:hover {
+	background: var(--MentionHover);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.MessageHeader {
+	display: flex;
+	align-items: baseline;
+	gap: 6px;
+}
+
+.MessageSender {
+	color: var(--Text-2);
+	font-family: var(--MessageContent);
+	font-weight: 600;
+	font-size: 1rem;
+}
+.MessageHeader.User .MessageSender {
+	color: var(--Accent-2);
+}
+.MessageHeader.Other .MessageSender {
+	color: color-mix(in hsl, var(--Accent-5), var(--BG-4) 8%);
+}
+
+.MessageTimestamp {
+	color: var(--Text-4);
+	font-family: var(--MessageContent);
+	font-size: 0.75rem;
+}
+.MessageHeader.User .MessageTimestamp {
+	color: color-mix(in hsl, var(--Accent-3), var(--Text-4) 75%);
+}
+.MessageHeader.Other .MessageTimestamp {
+	color: color-mix(in hsl, color-mix(in hsl, var(--Accent-5), var(--BG-4) 8%), var(--Text-4) 75%);
+}
+
+
+.Message .MessageContent {
+	color: var(--Text-3);
+	overflow-wrap: anywhere;
+	font-family: var(--MessageContent);
+}
+
+.Message .MessageContent .UserMentionString {
+	padding: 1px;
+	border-radius: 6px;
+	background-color: color-mix(in hsl, var(--Accent-3), var(--BG-3) 80%);
+	color: var(--Accent-3);
+
+	white-space: nowrap;
+
+	transition: background-color 0.1s ease;
+}
+
+.Message .MessageContent .UserMentionString:hover {
+	background-color: color-mix(in hsl, var(--Accent-2), var(--BG-3) 60%);
+}

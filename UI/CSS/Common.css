@@ -1,0 +1,133 @@
+
+:root {
+	/* Layout */
+	--PanelGap: 12px;
+	--PanelPadding: 8px;
+	--PanelBorderRadius: 14px;
+
+	--TextAreaSize: 100px; /* height of the text input area */
+
+	--MessageSpacing: 4px;
+
+	--BaseFontSize: 14px;
+
+
+	/* Font options */
+	--MessageContent: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif; /* main font */
+
+
+
+	/*
+	Colours (stolen from my discord colour scheme)
+	*/
+
+	/* text colors */
+	--Text-0: var(--BG-4); /* text on colored elements */
+	--Text-1: hsl(220, 45%, 95%); /* other normally white text */
+	--Text-2: hsl(220, 25%, 70%); /* headings and important text */
+	--Text-3: hsl(220, 20%, 60%); /* normal text */
+	--Text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
+	--Text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
+
+	/* background and dark colors */
+	--BG-1: hsla(220, 15%, 20%, 1); /* dark buttons when clicked */
+	--BG-2: hsla(220, 15%, 16%, 1); /* dark buttons */
+	--BG-3: hsla(220, 15%, 13%, 1); /* spacing, secondary elements */
+	--BG-4: hsla(220, 15%, 10%, 1); /* main background color */
+	--Hover: hsla(221, 19%, 40%, 0.1); /* channels and buttons when hovered */
+	--Active: hsla(220, 19%, 40%, 0.2); /* channels and buttons when clicked or selected */
+	--Active-2: hsla(220, 19%, 40%, 0.3); /* extra state for transparent buttons */
+	--MessageHover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
+
+	/* accent colors */
+	--Accent-1: var(--Purple-1); /* links and other accent text */
+	--Accent-2: var(--Purple-2); /* small accent elements */
+	--Accent-3: var(--Purple-3); /* accent buttons */
+	--Accent-4: var(--Purple-4); /* accent buttons when hovered */
+	--Accent-5: var(--Purple-5); /* accent buttons when clicked */
+	--Accent-new: var(--Accent-2); /* stuff that's normally red like mute/deafen buttons */
+	--Mention: linear-gradient(to right, color-mix(in hsl, var(--Accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+	--MentionHover: linear-gradient(to right, color-mix(in hsl, var(--Accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+	--Reply: linear-gradient(to right, color-mix(in hsl, var(--Text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+	--ReplyHover: linear-gradient(to right, color-mix(in hsl, var(--Text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+	/* border colors */
+	--BorderLight: var(--Hover); /* general light border color */
+	--Border: var(--Active-2); /* general normal border color */
+	--BorderHover: var(--Active); /* border color of panels when hovered */
+	--ButtonBorder: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+	/* base colors */
+	--Red-1: oklch(75% 0.12 0);
+	--Red-2: oklch(70% 0.12 0);
+	--Red-3: oklch(65% 0.12 0);
+	--Red-4: oklch(60% 0.12 0);
+	--Red-5: oklch(55% 0.12 0);
+
+	--Green-1: oklch(75% 0.11 170);
+	--Green-2: oklch(70% 0.11 170);
+	--Green-3: oklch(65% 0.11 170);
+	--Green-4: oklch(60% 0.11 170);
+	--Green-5: oklch(55% 0.11 160);
+
+	--Blue-1: oklch(75% 0.1 215);
+	--Blue-2: oklch(70% 0.1 215);
+	--Blue-3: oklch(65% 0.1 215);
+	--Blue-4: oklch(60% 0.1 215);
+	--Blue-5: oklch(55% 0.1 215);
+
+	--Yellow-1: oklch(80% 0.11 90);
+	--Yellow-2: oklch(75% 0.11 90);
+	--Yellow-3: oklch(70% 0.11 90);
+	--Yellow-4: oklch(65% 0.11 90);
+	--Yellow-5: oklch(60% 0.11 90);
+
+	--Purple-1: oklch(75% 0.11 310);
+	--Purple-2: oklch(70% 0.11 310);
+	--Purple-3: oklch(65% 0.11 310);
+	--Purple-4: oklch(60% 0.11 310);
+	--Purple-5: oklch(55% 0.11 310);
+}
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--BG-4);
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+
+	overflow: hidden;
+	font-size: var(--BaseFontSize);
+}
+
+
+::-webkit-scrollbar {
+	padding-right: 5px;
+	width: 4px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--BG-2);
+	border-radius: 999px;
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+	padding-right: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--Accent-3);
+	border-radius: 999px;
+	
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--Accent-4);
+}

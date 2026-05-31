@@ -1,0 +1,84 @@
+#SettingsOverlay {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: 1000;
+
+	opacity: 0;
+	pointer-events: none;
+
+	transition: opacity 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+#SettingsOverlay.Active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.SettingsWindow {
+	width: 500px;
+	max-width: 90vw;
+
+	background: var(--BG-2);
+
+	border: 1px solid var(--Accent-3);
+	border-radius: var(--PanelBorderRadius);
+
+	padding: calc(var(--PanelPadding) * 3);
+
+	box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+.OverlayTitle {
+	font-size: 2rem;
+	color: var(--Text-2);
+	text-align: center;
+
+	font-family: var(--MessageContent);
+}
+
+#ExitSettings {
+	display: block;
+	margin: auto;
+
+	padding: calc(var(--PanelPadding) / 2);
+	padding-left: calc(var(--PanelPadding) * 2);
+	padding-right: calc(var(--PanelPadding) * 2);
+
+	border: none;
+	border-radius: 9999px;
+	background-color: color-mix(in hsl, var(--BG-3), var(--BG-4) 10%);
+	outline: 1px solid var(--Accent-5);
+	
+	color: var(--Text-4);
+	font-family: var(--MessageContent);
+	font-size: 1.2rem;
+	font-weight: 500;
+
+	transition: background-color 0.2s, color 0.2s;
+}
+#ExitSettings:hover {
+	background-color: color-mix(in hsl, var(--BG-4), var(--Accent-3) 20%);
+	color: var(--Text-3);
+
+	outline: 1px solid var(--Accent-4);
+	box-shadow: 0 0 0 3px color-mix(in hsl, var(--Accent-3), transparent 85%);
+}

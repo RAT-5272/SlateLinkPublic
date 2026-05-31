@@ -1,0 +1,230 @@
+#LoginScreen {
+	position: fixed;
+
+	top: 0;
+	left: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(8px);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: 1000;
+
+	opacity: 0;
+	pointer-events: none;
+
+	transition: opacity 0.2s ease, backdrop-filter 0.2s ease;
+}
+
+#LoginScreen.Active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.LoginWindow {
+	width: 500px;
+	max-width: 90vw;
+
+	background: var(--BG-2);
+
+	border: 1px solid var(--Accent-3);
+	border-radius: var(--PanelBorderRadius);
+
+	padding: calc(var(--PanelPadding) * 3);
+
+	box-shadow: 0px 10px 80px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+
+.OverlayTitle {
+	font-size: 2rem;
+	color: var(--Text-2);
+	text-align: center;
+
+	font-family: var(--MessageContent);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#LoginWindowText {
+	font-family: var(--MessageContent);
+	color: var(--Text-3);
+	size: 2.2em;
+}
+
+
+
+
+
+
+
+
+
+
+.LoginInfoInput {
+	display: block;
+	margin: auto;
+
+	width: calc(85% - var(--PanelPadding) * 2);
+	height: calc(100% - var(--PanelPadding) * 2);
+	min-height: calc(100% - var(--PanelPadding) * 2);
+
+	border-radius: var(--PanelBorderRadius);
+
+	padding: var(--PanelPadding);
+	margin-top: calc(var(--PanelPadding) * 2);
+	margin-bottom: calc(var(--PanelPadding) * 2);
+
+	overflow-y: auto;
+	resize: none;
+	
+	border: none;
+	outline: 1px solid color-mix(in hsl, var(--Accent-3), transparent 50%);
+	background: var(--BG-4);
+
+	color: var(--Text-3);
+	font-size: 1rem;
+	font-family: var(--MessageContent);
+
+	transition: outline 0.2s ease, box-shadow 0.2s ease;
+}
+
+.LoginInfoInput::placeholder {
+	color: var(--Text-4);
+	font-style: italic;
+}
+
+.LoginInfoInput:focus {
+	border: none;
+
+	outline: 1px solid var(--Accent-3);
+ 	box-shadow: 0 0 0 3px color-mix(in hsl, var(--Accent-3), transparent 85%);
+}
+
+.LoginInfoInput::-ms-reveal {
+  filter: invert(70%);
+}
+
+
+
+
+
+#LoginCheckboxRow {
+	display: flex;
+	align-items: center;
+	gap: var(--PanelGap);
+}
+
+#SaveLoginInformation {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	width: 1.6rem;
+	height: 1.6rem;
+
+	border: 1px solid var(--Accent-3);
+	background-color: var(--BG-2);
+	border-radius: 0.3rem;
+
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+
+	vertical-align: middle;
+
+	transition: background-color 0.3s ease, border 0.3s ease;
+}
+#SaveLoginInformation:checked {
+	background-color: var(--Accent-5);
+	border: 1px solid var(--Accent-1);
+}
+#SaveLoginInformation:checked::after {
+	content: "";
+	position: absolute;
+	left: 0.4rem;
+	top: 1px;
+
+	width: 0.4rem;
+	height: 0.8rem;
+
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+label[for="SaveLoginInformation"] {
+	font-family: var(--MessageContent);
+	color: var(--Text-4);
+	cursor: pointer;
+
+	vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#LoginButton {
+	display: block;
+	margin: auto;
+
+	padding: calc(var(--PanelPadding) / 2);
+	padding-left: calc(var(--PanelPadding) * 2);
+	padding-right: calc(var(--PanelPadding) * 2);
+
+	border: none;
+	border-radius: 9999px;
+	background-color: color-mix(in hsl, var(--BG-3), var(--BG-4) 10%);
+	outline: 1px solid var(--Accent-5);
+	
+	color: var(--Text-4);
+	font-family: var(--MessageContent);
+	font-size: 1.2rem;
+	font-weight: 500;
+
+	transition: background-color 0.2s, color 0.2s;
+}
+#LoginButton:hover {
+	background-color: color-mix(in hsl, var(--BG-4), var(--Accent-3) 20%);
+	color: var(--Text-3);
+
+	outline: 1px solid var(--Accent-4);
+	box-shadow: 0 0 0 3px color-mix(in hsl, var(--Accent-3), transparent 85%);
+}

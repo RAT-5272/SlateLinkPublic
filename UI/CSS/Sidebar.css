@@ -1,0 +1,249 @@
+.Window .Sidebar {
+	grid-column: 2;
+
+	display: grid;
+	grid-template-rows: 1fr auto auto;
+
+	gap: var(--PanelGap);
+}
+
+
+
+
+
+
+
+
+
+
+.Window .Sidebar .ConversationList {
+	grid-row: 1;
+
+	padding: var(--PanelPadding);
+	border: 1px solid var(--Border);
+
+	min-width: max(15rem, 22vw);
+	min-height: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--PanelGap);
+
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--BG-3);
+}
+
+.ConversationList .ConversationItem {
+	padding: var(--PanelPadding);
+	border-radius: var(--PanelBorderRadius);
+
+	display: grid;
+	grid-template-columns: 1fr auto;
+
+	padding-bottom: var(--PanelPadding);
+
+	background-color: transparent;
+	margin-left: 0px;
+	border-left: 0px;
+	width: 100%;
+
+	transition: background-color 0.2s ease, margin-left 0.2s ease, border-left 0.2s ease, width 0.2s ease;
+}
+
+.ConversationItem.ActiveConversation {
+	background-color: color-mix(in hsl, var(--Accent-3), var(--BG-2) 85%);
+	margin-left: var(--PanelPadding);
+	border-left: 3px solid var(--Accent-3);
+	width: calc(100% - var(--PanelPadding)); 
+}
+
+.ConversationItem:hover {
+	background-color: color-mix(in hsl, var(--Accent-3), var(--BG-2) 85%);
+	margin-left: var(--PanelPadding);
+	border-left: 3px solid var(--Accent-3);
+	width: calc(100% - var(--PanelPadding)); 
+}
+
+.ConversationItem .Username {
+	color: var(--Text-2);
+	font-size: 1.1rem;
+	font-weight: 600;
+
+	font-family: var(--MessageContent);
+}
+
+.ConversationItem .Timestamp {
+	justify-self: end;
+	text-align: right;
+
+	color: var(--Text-4);
+	font-size: 0.8rem;
+	font-weight: 300;
+
+	font-family: var(--MessageContent);
+}
+
+.ConversationItem .LastMessage {
+	color: var(--Text-3);
+	font-size: 0.9rem;
+	font-weight: 300;
+
+	font-family: var(--MessageContent);
+}
+
+.ConversationItem .Updates {
+	justify-self: end;
+	text-align: right;
+
+	color: var(--Text-4);
+	font-size: 0.8rem;
+	font-weight: 600;
+
+	font-family: var(--MessageContent);
+
+	transition: color 0.2s;
+}
+
+.ConversationItem .Updates.HasUpdates {
+	color: var(--Green-5);
+}
+
+
+
+
+
+
+
+
+
+
+.Sidebar .StartConversation {
+	grid-row: 2;
+
+	display: grid;
+	grid-template-columns: 1fr auto;
+
+	gap: var(--PanelPadding);
+
+	min-height: 50px;
+	align-items: center;
+
+	padding: var(--PanelPadding);
+	border: 1px solid var(--Border);
+
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--BG-3);
+}
+
+.Window .Sidebar .StartConversation #StartConversationInput {
+	grid-column: 1;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: var(--BG-4);
+	border-radius: 9999px;
+
+	color: var(--Text-3);
+	font-size: 1.1rem;
+	font-family: var(--MessageContent);
+
+	padding-left: calc(var(--PanelPadding) * 2);
+
+	border: none;
+}
+.Window .Sidebar .StartConversation #StartConversationInput::placeholder {
+	color: var(--Text-4);
+	font-style: italic;
+}
+.Window .Sidebar .StartConversation #StartConversationInput:focus {
+	outline: 1px solid var(--Accent-3);
+	box-shadow: 0 0 0 3px color-mix(in hsl, var(--Accent-3), transparent 85%);
+}
+
+.Window .Sidebar .StartConversation #StartConversationButton {
+	grid-column: 2;
+
+	aspect-ratio: 1 / 1;
+	height: 100%;
+	max-height: 75px;
+
+	border: none;
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--Accent-3);
+
+	color: var(--Text-5);
+	font-size: 1rem;
+	font-weight: 500;
+	font-family: var(--MessageContent);
+	
+	transition: background-color 0.2s;
+}
+.Window .Sidebar .StartConversation #StartConversationButton:hover {
+	background-color: var(--Accent-5);
+}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Window .Sidebar .UserInfo {
+	grid-row: 3;
+
+	display: grid;
+
+	grid-template-rows: auto auto;
+
+	min-height: 5rem;
+
+	padding: var(--PanelPadding);
+	border: 1px solid var(--Border);
+
+	border-radius: var(--PanelBorderRadius);
+	background-color: var(--BG-3);
+}
+
+.Window .Sidebar .UserInfo #ClientUsername {
+	grid-row: 1;
+
+	color: var(--Text-3);
+	font-size: 1.1rem;
+	font-family: var(--MessageContent);
+
+	top: var(--PanelPadding);
+	left: var(--PanelPadding);
+}
+
+.Window .Sidebar .UserInfo #ClientToken {
+	grid-row: 2;
+
+	text-align: right;
+	justify-self: end;
+	align-self: end;
+
+	color: var(--Text-5);
+	font-size: 0.8rem;
+	font-family: var(--MessageContent);
+
+	bottom: var(--PanelPadding);
+	right: var(--PanelPadding);
+
+	overflow-x: hidden;
+
+
+}
